@@ -21,6 +21,7 @@ fn main() {
         suffix = "-netlib";
         let output = Config::new("source")
             .define("BUILD_TESTING", "OFF")
+            .define("POSITION_INDEPENDENT_CODE", "ON")
             .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
             .define("CBLAS", switch!(cblas))
             .define("LAPACKE_WITH_TMG", switch!(lapacke && tmg))
